@@ -12,6 +12,7 @@ makeSound(buttonInnerHTML)
 document.addEventListener('keypress',(event)=>{
 makeSound(event.key)
 })
+
 // adds audio
 function makeSound(key) {
   switch (key) {
