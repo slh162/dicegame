@@ -4,13 +4,15 @@ for (i = 0; i < alldrum; i++) {
 }
 
 function handleClick() {
-  // listens to cliks
+  // listens to cliksg
   var buttonInnerHTML=this.innerHTML;
 makeSound(buttonInnerHTML)
+buttonAnimation(buttonInnerHTML)
 }
 // listnes to keyboard cliks
 document.addEventListener('keypress',(event)=>{
 makeSound(event.key)
+buttonAnimation(event.key)
 })
 
 // adds audio
@@ -48,4 +50,11 @@ function makeSound(key) {
     default:
       break;
   }
+}
+function buttonAnimation(currentKey) {
+ var activeButton= document.querySelector('.'+currentKey)
+  activeButton.classList.add('pressed')
+  setTimeout(()=>{
+    activeButton.classList.remove('pressed')
+  },100)
 }
